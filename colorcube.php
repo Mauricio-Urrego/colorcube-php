@@ -22,6 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+namespace Ellipsis\Colors;
+
 class LocalMaximum {
   # Local maxima as found during the image analysis->
   # We need this class for ordering by cell hit count->
