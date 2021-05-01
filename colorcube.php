@@ -137,18 +137,18 @@ class ColorCube {
   	# Reset all cells
   	$this->clear_cells();
     # Find the size, width, and height of the image.
-    $width  = $image['size'][0];
-    $height = $image['size'][1];
+    $width  = imagesx($image);
+    $height = imagesy($image);
     # Iterate over all pixels of the image
     for($x=0; $x<$width; $x++) {
       for($y=0; $y<$height; $y++) {
-        $p = imagecolorat($image['image'], $x, $y);
+        $p = imagecolorat($image, $x, $y);
 
   		  if ($p === 0) {
   		  	break;
         }
 
-        $p = imagecolorsforindex($image['image'], $p);
+        $p = imagecolorsforindex($image, $p);
 
   		  # Get color components
   		  $r = floatval($p['red']) / 255.0;
