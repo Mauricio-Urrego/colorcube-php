@@ -64,7 +64,7 @@ class ColorCube {
 		# Helper variable to have cell count handy
 		$this->cell_count = $resolution ** 3; // $resolution to the 3rd power.
 		# Create cells
-    foreach (range(0, $this->cell_count-1) as $k) {
+    for ($k=$this->cell_count; $k--;) {
       $this->cells[$k] = new CubeCell();
     }
 
@@ -181,9 +181,9 @@ class ColorCube {
   	# We collect local maxima in here
   	$local_maxima = [];
   	# Find local maxima in the grid
-  	foreach (range(0, $this->resolution-1) as $r) {
-  		foreach (range(0, $this->resolution-1) as $g) {
-  			foreach (range(0, $this->resolution-1) as $b) {
+    for ($r=$this->resolution; $r--;) {
+      for ($g=$this->resolution; $g--;) {
+        for ($b=$this->resolution; $b--;) {
   				$local_index = $this->cell_index($r, $g, $b);
   				# Get hit count of this cell
   				$local_hit_count = $this->cells[$local_index]->hit_count;
@@ -194,7 +194,7 @@ class ColorCube {
   				# It is a local maximum until we find a neighbour with a higher hit count
   				$is_local_maximum = True;
   				# Check if any neighbour has a higher hit count, if so, no local maxima
-  				foreach (range(0, 26) as $n) {
+          for ($n=26; $n--;) {
   					$r_index = $r+$this->neighbour_indices[$n][0];
   					$g_index = $g+$this->neighbour_indices[$n][1];
   					$b_index = $b+$this->neighbour_indices[$n][2];
