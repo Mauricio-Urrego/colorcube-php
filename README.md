@@ -1,13 +1,13 @@
 # colorcube-php
-Dominant color extraction from RGB images—PHP port of Ole Krause-Sparman's algorithm.
+Dominant color extraction from RGB images — PHP port of Ole Krause-Sparman's algorithm.
 
-## [demo](http://mauricio-urrego.github.io/colorcube-php/)
+## [Demo - Not Available Yet](http://mauricio-urrego.github.io/colorcube-php/)
 
 This is a PHP port of [ColorCube](https://github.com/pixelogik/ColorCube), by Ole Krause-Sparmann. You can find an excellent description of how it works at [that repo](https://github.com/pixelogik/ColorCube)
 
 ColorCube is for dominant color extraction from RGB images. Given an image element, it returns a sorted array of hex colors.
 
-## usage
+## Usage
 
 ```php
 $cc = new ColorCube( // all arguments are optional; these are the defaults:
