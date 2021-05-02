@@ -1,7 +1,7 @@
 # colorcube-php
 Dominant color extraction from RGB images — PHP port of Ole Krause-Sparman's algorithm.
 
-## [Demo - Not Available Yet](http://mauricio-urrego.github.io/colorcube-php/)
+## [Demo](https://github.com/Mauricio-Urrego/woocommerce-colors)
 
 This is a PHP port of [ColorCube](https://github.com/pixelogik/ColorCube), by Ole Krause-Sparmann. You can find an excellent description of how it works at [that repo](https://github.com/pixelogik/ColorCube).
 
