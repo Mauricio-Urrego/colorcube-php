@@ -1,0 +1,20 @@
+{
+    "name": "mauriciourrego/colorcube-php",
+    "description": "Dominant color extraction from RGB images — PHP port of Ole Krause-Sparman's algorithm.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mauriciourrego\\ColorcubePhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mauricio Urrego",
+            "email": "m.urrego7@gmail.com"
+        }
+    ],
+    "require": {
+      "ext-gd": "*"
+    }
+}
