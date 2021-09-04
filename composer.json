@@ -6,7 +6,12 @@
     "autoload": {
         "psr-4": {
             "Mauriciourrego\\ColorcubePhp\\": "src/"
-        }
+        },
+        "classmap": [
+          "src/ColorCube.php",
+          "src/CubeCell.php",
+          "src/LocalMaximum.php"
+        ]
     },
     "authors": [
         {
