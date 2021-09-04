@@ -2,6 +2,8 @@
 
 namespace Mauriciourrego\ColorcubePhp;
 
+require_once  __DIR__ . '/../vendor/autoload.php';
+
 class CubeCell {
   /**
    * The color cube is made out of these cells.

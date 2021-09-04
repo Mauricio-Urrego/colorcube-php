@@ -2,7 +2,7 @@
 
 namespace Mauriciourrego\ColorcubePhp;
 
-require 'vendor/autoload.php';
+require_once  __DIR__ . '/../vendor/autoload.php';
 
 class LocalMaximum {
   // Local maxima as found during the image analysis->
