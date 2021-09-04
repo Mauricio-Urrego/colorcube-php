@@ -5,14 +5,10 @@ namespace Mauriciourrego\ColorcubePhp;
 require_once  __DIR__ . '/../vendor/autoload.php';
 
 class LocalMaximum {
-  // Local maxima as found during the image analysis->
-  // We need this class for ordering by cell hit count->
-  private $hit_count;
-  private $cell_index;
-  private $r;
-  private $g;
-  private $b;
-
+  /**
+   * Local maxima as found during the image analysis->
+   * We need this class for ordering by cell hit count->
+   */
   public function __construct($hit_count, $cell_index, $r, $g, $b) {
     // Hit count of the cell.
     $this->hit_count = $hit_count;

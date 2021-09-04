@@ -29,24 +29,8 @@ require_once  __DIR__ . '/../vendor/autoload.php';
 /**
  * Uses a 3d RGB histogram to find local maxims in the density distribution
  * in order to retrieve dominant colors of pixel images.
- *
- * @var $distinct_threshold float|mixed
- * @var $avoid_color int[]|mixed
- * @var $resolution int|mixed
- * @var $bright_threshold float|mixed
- * @var $cell_count int|mixed
- * @var $cells
- * @var $neighbour_indices \int[][]
  */
 class ColorCube {
-  private $distinct_threshold;
-  private $avoid_color;
-  private $resolution;
-  private $bright_threshold;
-  private $cell_count;
-  private $cells;
-  private $neighbour_indices;
-
   public function __construct($resolution = 30, $avoid_color = [
     255,
     255,
