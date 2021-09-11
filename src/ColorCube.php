@@ -126,11 +126,6 @@ class ColorCube {
     for ($x = 0; $x < $width; $x++) {
       for ($y = 0; $y < $height; $y++) {
         $p = imagecolorat($image, $x, $y);
-
-        if ($p === 0) {
-          break;
-        }
-
         $p = imagecolorsforindex($image, $p);
 
         // Get color components.
