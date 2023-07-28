@@ -1,3 +1,6 @@
+# Install
+`composer require mauriciourrego/colorcube-php`
+
 # colorcube-php
 Dominant color extraction from RGB images — PHP port of Ole Krause-Sparman's algorithm.
 
@@ -13,7 +16,7 @@ ColorCube is for dominant color extraction from RGB images. Given an image eleme
 $cc = new ColorCube( // all arguments are optional; these are the defaults:
   20,   // color-space resolution
   [255, 255, 255], // avoid color
-  0.4   // distinctness threshold
+  0.4,   // distinctness threshold
   0.2,  // brightness threshold
 );
 $image = imagecreatefromjpeg($image_url);
