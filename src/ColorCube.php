@@ -30,12 +30,23 @@ require_once  __DIR__ . '/../vendor/autoload.php';
  * Uses a 3d RGB histogram to find local maxims in the density distribution
  * in order to retrieve dominant colors of pixel images.
  */
-class ColorCube {
+class ColorCube
+{
+
+  public $resolution;
+  public $distinct_threshold;
+  public $avoid_color;
+  public $bright_threshold;
+  public $cell_count;
+  public $cells;
+  public $neighbour_indices;
+
   public function __construct($resolution = 30, $avoid_color = [
     255,
     255,
     255
-  ], $distinct_threshold = 0.2, $bright_threshold = 0.6) {
+  ], $distinct_threshold = 0.2, $bright_threshold = 0.6)
+  {
     // Keep resolution.
     $this->resolution = $resolution;
     // Threshold for distinct local maxima.
@@ -83,12 +94,14 @@ class ColorCube {
     ];
   }
 
-  public function cell_index($r, $g, $b) {
+  public function cell_index($r, $g, $b)
+  {
     // Returns linear index for cell with given 3d index.
     return $r + $g * $this->resolution + $b * $this->resolution * $this->resolution;
   }
 
-  public function clear_cells() {
+  public function clear_cells()
+  {
     foreach ($this->cells as $c) {
       $c->hit_count = 0;
       $c->r_acc = 0.0;
@@ -97,7 +110,8 @@ class ColorCube {
     }
   }
 
-  public function get_colors($image): array {
+  public function get_colors($image): array
+  {
     $m = $this->find_local_maxima($image);
     if ($this->avoid_color !== 'None') {
       $m = $this->filter_too_similar($m);
@@ -115,7 +129,8 @@ class ColorCube {
     return $colors;
   }
 
-  public function find_local_maxima($image): array {
+  public function find_local_maxima($image): array
+  {
     // Finds and returns local maxima in 3d histogram, sorted with respect to hit count.
     // Reset all cells.
     $this->clear_cells();
@@ -208,7 +223,8 @@ class ColorCube {
     return $local_maxima;
   }
 
-  public function filter_distinct_maxima($maxima): array {
+  public function filter_distinct_maxima($maxima): array
+  {
     // Returns a filtered version of the specified array of maxima,
     // in which all entries have a minimum distance of $this.distinct_threshold.
     $result = [];
@@ -238,7 +254,8 @@ class ColorCube {
     return $result;
   }
 
-  public function filter_too_similar($maxima): array {
+  public function filter_too_similar($maxima): array
+  {
     // Returns a filtered version of the specified array of maxima,
     // in which all entries are far enough away from the specified avoid_color.
     $result = [];
